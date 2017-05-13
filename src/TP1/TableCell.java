@@ -1,4 +1,4 @@
-package TP2;
+package TP1;
 import java.util.Arrays;
 
 public class TableCell implements Comparable<TableCell> {

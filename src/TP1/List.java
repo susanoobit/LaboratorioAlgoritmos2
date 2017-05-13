@@ -1,4 +1,4 @@
-package TP2;
+package TP1;
 import java.util.Comparator;
 import java.util.function.Predicate;
 

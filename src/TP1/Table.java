@@ -1,4 +1,4 @@
-package TP2;
+package TP1;
 public class Table {
 	
 	private int numberOfColumns = 1;
