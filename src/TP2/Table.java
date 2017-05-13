@@ -1,3 +1,4 @@
+package TP2;
 public class Table {
 	
 	private int numberOfColumns = 1;

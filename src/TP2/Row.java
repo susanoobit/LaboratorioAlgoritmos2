@@ -1,3 +1,4 @@
+package TP2;
 public class Row implements Comparable<Row> {
 		
 	private List<TableCell> cells = new List<TableCell>();

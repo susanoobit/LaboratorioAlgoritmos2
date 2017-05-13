@@ -1,3 +1,4 @@
+package TP2;
 
 public class Client implements Comparable<Client> {
 	private String name;
