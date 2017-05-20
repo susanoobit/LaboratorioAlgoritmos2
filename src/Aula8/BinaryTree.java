@@ -10,8 +10,16 @@ public class BinaryTree implements Tree {
 
 	@Override
 	public int getHeight() {
-		// TODO Auto-generated method stub
-		return 0;
+		return getHeight(root, -1);
+	}
+	
+	private int getHeight(Node no, int actualHeight) {
+		if (no != null) {
+			int leftHeight = getHeight(no.left, actualHeight + 1);
+			int rightHeight = getHeight(no.right, actualHeight + 1);
+			actualHeight = leftHeight > rightHeight ? leftHeight : rightHeight;
+		}
+		return actualHeight;
 	}
 
 	@Override
@@ -66,25 +74,38 @@ public class BinaryTree implements Tree {
 
 	@Override
 	public void show() {
-		// TODO Auto-generated method stub
-		
+		show(root);		
 	}
 	
 	private void show (Node i) {
 		if (i == null) return;
-		
+		show(i.left);
+		System.out.print(i.item + " ");
+		show(i.right);
 	}
 
 	@Override
 	public void showPrevious() {
-		// TODO Auto-generated method stub
-		
+		showPrevious(root);		
+	}
+	
+	private void showPrevious(Node i) {
+		if (i == null) return;
+		System.out.print(i.item + " ");
+		showPrevious(i.left);
+		showPrevious(i.right);
 	}
 
 	@Override
 	public void showPosterior() {
-		// TODO Auto-generated method stub
-		
+		showPosterior(root);
+	}
+	
+	private void showPosterior(Node i) {
+		if (i == null) return;
+		showPosterior(i.left);
+		showPosterior(i.right);
+		System.out.print(i.item + " ");
 	}
 	
 }
