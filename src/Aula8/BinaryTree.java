@@ -10,7 +10,7 @@ public class BinaryTree implements Tree {
 
 	@Override
 	public int getHeight() {
-		return getHeight(root, -1);
+		return root == null ? 0 : getHeight(root, -1);
 	}
 	
 	private int getHeight(Node no, int actualHeight) {
@@ -106,6 +106,31 @@ public class BinaryTree implements Tree {
 		showPosterior(i.left);
 		showPosterior(i.right);
 		System.out.print(i.item + " ");
+	}
+
+	@Override
+	public boolean isComplete() {
+		return isComplete(root);
+	}
+	
+	private boolean isComplete(Node no) {
+		if (no != null) {
+			if (no.left == no.right) return true;
+			else if ((no.left == null && no.right != null) ||
+				(no.right == null && no.left != null))
+				return false;
+			
+			boolean left = isComplete(no.left);
+			if (!left) return left;
+			
+			boolean right = isComplete(no.right);
+			if (!right) return right;
+			
+			int leftHeight = getHeight(no.left, 0);
+			int rightHeight = getHeight(no.right, 0);
+			return leftHeight == rightHeight;
+		}
+		return false;
 	}
 	
 }
