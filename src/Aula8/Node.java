@@ -3,8 +3,8 @@ package Aula8;
 public class Node {
 	
 	int item;
-	Node left = null;
-	Node right = null;
+	Node left;
+	Node right;
 	
 	Node (int item, Node left, Node right) {
 		this.item = item;
