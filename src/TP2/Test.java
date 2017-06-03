@@ -6,13 +6,13 @@ public class Test {
 
 	public static void main(String[] args) throws IOException {
 		Huffman huff = new Huffman();
-		//writtingTest(huff);
-		readingTest(huff);
+		writtingTest(huff);
+		//readingTest(huff);
 	}
 	
 	public static void writtingTest (Huffman huff) throws IOException {
 		huff.text = "Os proletários nada têm a perder, exceto seus grilhões. Têm um mundo a ganhar!";
-		huff.fileName = "teste";
+		huff.fileName = "teste2";
 		huff.loadDistribution();
 		huff.buildTree();
 		huff.buildCodification();

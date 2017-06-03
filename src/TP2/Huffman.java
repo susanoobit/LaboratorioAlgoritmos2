@@ -78,12 +78,12 @@ public class Huffman {
 	
 	private void buildHuffmanTreeAsBinaryData (HuffmanNode hn, ArrayList<Byte> alb) {
 		if (hn.isLeaf()) {
-			alb.add(Byte.valueOf((byte) 1));
+			alb.add(Byte.valueOf((byte) '1'));
 			alb.add(Byte.valueOf((byte) hn.ch));
 			return;
 		}
 		
-		alb.add(Byte.valueOf((byte) 0));
+		alb.add(Byte.valueOf((byte) '0'));
 		buildHuffmanTreeAsBinaryData(hn.left, alb);
 		buildHuffmanTreeAsBinaryData(hn.right, alb);
 	}
@@ -97,10 +97,18 @@ public class Huffman {
 	}
 	
 	private ArrayList<Byte> buildBinaryCompressedText () {
-		return text
-			.chars()
-			.mapToObj(i -> Byte.valueOf((byte) i))
-			.collect(Collectors.toCollection(ArrayList::new));
+		return
+			text
+				.chars()
+				.mapToObj(i -> codification.get((char) i))
+				.reduce(new ArrayList<Byte>(), (alb, code) -> {
+						alb.addAll(code.chars().mapToObj(i -> (byte) i).collect(Collectors.toCollection(ArrayList::new)));
+						return alb;
+					},
+					(alb1, alb2) -> {
+						alb1.addAll(alb2);
+						return alb1;
+					});
 	}
 	
 	public void loadDistribution () {	
