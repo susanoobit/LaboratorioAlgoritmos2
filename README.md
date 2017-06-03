@@ -20,4 +20,4 @@ Criar um compactador de arquivos baseado no Algoritmo de Huffman. A interface é
 
 
 
-3. Outros arquivos e programados feitos em aula.
+3. Outros arquivos e rotinas feitos em aula.
