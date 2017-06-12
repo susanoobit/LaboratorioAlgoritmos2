@@ -19,5 +19,19 @@ Além, foram testadas funcionalidades do **Java 8** relativas a __programação 
 Criar um compactador de arquivos baseado no Algoritmo de Huffman. A interface é por linha de comando.
 
 
+3. **Trabalho Prático 3**
 
-3. Outros arquivos e rotinas feitos em aula.
+Implementação dos seguintes métodos de ordenação de dados, usando array de inteiros como entrada:
+
+* Bubble sort
+* Selection sort
+* Insertion sort
+* Shell sort
+* Merge Sort
+* Heap sort
+* Quick sort
+
+Além, são gerados arquivos `.tsv` com os tempos gastos por cada método na ordenação de arrays de inteiros com 100, 1 k, 10 k, 100 k e 1 M elementos.
+
+
+4. Outros arquivos e rotinas feitos em aula.
