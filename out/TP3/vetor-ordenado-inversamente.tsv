@@ -1,0 +1,6 @@
+Tamanho array	InsertionSort	SelectionSort	MergeSort	ShellSort	BubbleSort	HeapSort	QuickSort
+100	0	0	0	0	0	0	0
+1000	0	1	0	0	0	0	1
+10000	16	27	1	0	54	1	26
+100000	1633	2753	4	8	5442	6	2560
+1000000	171638	272523	50	704	549735	63	261505
